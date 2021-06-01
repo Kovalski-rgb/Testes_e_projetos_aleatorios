@@ -1,0 +1,4 @@
+# Testes_e_projetos_aleatorios
+Um repositório pra coisas aleatórias que eu vou fazendo (imagens, gifs, alguns programas pra brincar, links, etc etc)
+
+Vai que um dia alguma coisa que ta aqui fica util (vai ter que receber uma revisão massa antes de ser efetivamente usado)
