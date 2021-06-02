@@ -21,7 +21,7 @@ for l in arquivo.read():
     if(l == stringProcurada[hit]):
         hit += 1
         if(hit == len(stringProcurada)):
-            print("Frase ou palavra identica encontrada na linha:",len(string)+1)
+            print("Frase ou palavra idêntica encontrada na linha:",len(string)+1)
             hits += 1
             hit = 0
     else:
