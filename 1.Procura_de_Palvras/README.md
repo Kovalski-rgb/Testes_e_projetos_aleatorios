@@ -3,6 +3,6 @@ nesse [trabalho](https://github.com/Kovalski-rgb/RA_AF10)  (principalmente no ex
 
 Você precisa executar o arquivo `main.py` juntamente com o arquivo de texto `text.txt`, na mesma pasta.
 
-O arquivo `text.txt` que está nesse repositório contém o [script](http://www.script-o-rama.com/movie_scripts/a1/bee-movie-script-transcript-seinfeld.html) inteiro do filme [Bee Movie](https://pt.wikipedia.org/wiki/Bee_Movie), lançado em 2007
+O arquivo `text.txt` que está nesse repositório contém o [script](http://www.script-o-rama.com/movie_scripts/a1/bee-movie-script-transcript-seinfeld.html)(o script não foi retirado desse site, mas esse é o mais próximo do que eu lembro) inteiro do filme [Bee Movie](https://pt.wikipedia.org/wiki/Bee_Movie), lançado em 2007
 
 Caso o arquivo `text.txt` não exista, ele será criado automaticamente
