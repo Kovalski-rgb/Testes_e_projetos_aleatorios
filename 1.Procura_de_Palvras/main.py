@@ -1,4 +1,10 @@
-arquivo = open('text.txt', 'r')
+try:
+    arquivo = open('text.txt', 'r')
+except FileNotFoundError:
+    open('text.txt','x')
+    print("Arquivo 'text.txt' criado com sucesso!")
+    input("Pressione enter...")
+    exit()
 
 string = []
 palavra = ""
@@ -31,3 +37,4 @@ if( hits==0 ):
 else:
     print("Foram encontrados um total de",hits,"palavra(s) semelhante(s)!")
 input("Pressione enter...")
+exit()
