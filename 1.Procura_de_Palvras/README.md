@@ -5,4 +5,4 @@ Você precisa executar o arquivo `main.py` juntamente com o arquivo de texto tex
 
 O arquivo `text.txt` contém o script inteiro do filme Bee Movie, lançado em 2007
 
-Planejo fazer com que se o arquivo text.txt não exista, ele crie um novo
+Caso o arquivo `text.txt` não exista, ele será criado automaticamente
