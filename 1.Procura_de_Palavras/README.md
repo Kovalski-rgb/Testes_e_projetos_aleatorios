@@ -4,3 +4,5 @@ nesse [trabalho](https://github.com/Kovalski-rgb/RA_AF10)  (principalmente no ex
 O arquivo `text.txt` que está nesse repositório contém o [script](http://www.script-o-rama.com/movie_scripts/a1/bee-movie-script-transcript-seinfeld.html) inteiro do filme [Bee Movie](https://pt.wikipedia.org/wiki/Bee_Movie), lançado em 2007 (o script não foi retirado desse site, mas esse é o mais parecido do que eu lembro)
 
 Caso o arquivo `text.txt` não exista, ele será criado automaticamente
+
+Na palavra de outras pessoas, é um ctrl + f em python
