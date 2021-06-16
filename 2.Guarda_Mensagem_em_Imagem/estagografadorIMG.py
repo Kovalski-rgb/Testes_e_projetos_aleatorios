@@ -11,6 +11,7 @@ contador = 0
 
 #601870.5 bytes(caracteres) para o pato 
 #49056.0  bytes(caracteres) para o lino
+alocacao = []
 
 #função pra deixar tudo padrão, da pra editar tudo aqui
 def mudaPixel(x, y):
@@ -18,9 +19,10 @@ def mudaPixel(x, y):
     if(x > 0):#width-1):
         tuplo = (image.getpixel( (x, y) ))
         for i in range(3):
-            print(tuplo[i], end = ' decimal | ')
             byte = "{0:08b}".format(tuplo[i])
-            print('byte',byte,'| posicão na cor: ',i,'| cor:',tuplo)
+            '''print(tuplo[i], end = ' decimal | ')
+            print('byte',byte,'| posicão na cor: ',i,'| cor:',tuplo) #'''
+            alocacao.append(byte)
             contador += 1
     return contador
 
@@ -33,7 +35,7 @@ print('h:',height)
 
 if(width>height):
     print('Height') #dependendo da imagem ela crasha o python :/
-    for x in range(height):
+    for x in range(height): #*da dimensão
         for y in range(width):
             contador += mudaPixel(y, x)
 else:
@@ -43,6 +45,8 @@ else:
             contador += mudaPixel(x, y)
 
 #image.save('MODIFICADO.png')
-print('bytes(caracteres) disponiveis para mensagem:',((contador)/16))
+for i in alocacao:
+    print(i)
+print('bytes(caracteres) disponiveis para mensagem:',(len(alocacao)/8))
 input('pressione enter: ')
 image.show()
