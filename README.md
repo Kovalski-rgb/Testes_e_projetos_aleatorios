@@ -9,3 +9,5 @@ Vai que um dia alguma coisa que ta aqui fica util
 <br>(ok nesse ponto eu to intencionalmente fazendo isso)))))
 
 A descrição do que é cada coisa ta dentro da pasta de cada coisa
+<br> A ideia também é que tudo dentro desse repositório é agregado ao meu portfólio, e nada foi um trabalho escolar obrigatório
+<br>(vou evitar de colocar coisas como "top 10 desafios python resolução" ou "project euler" aqui, TALVEZ eu faça outro repo)
