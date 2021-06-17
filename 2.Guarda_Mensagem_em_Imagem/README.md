@@ -2,7 +2,7 @@
 
 Programa em Python para fazer uma "esteganografia", ou seja, esconder um texto dentro de uma imagem (de uma maneira não muito óbvia)
 
-A intenção desse programa é ser um complemento OPCIONAL de um [projeto](https://github.com/danielnowakassis/Experi-ncia-Criativa-PUCPR) de experiência criativa, ele não faz parte diretamente do trabalho
+A intenção desse programa é ser um complemento OPCIONAL de um [projeto](https://github.com/danielnowakassis/Experi-ncia-Criativa-PUCPR) de experiência criativa, ele não faz parte diretamente do trabalho, e eu programei isso por opção
 
 Temos 2 programas nesse repositório, o  `mensageiro.py` e o `leitor.py`
 
