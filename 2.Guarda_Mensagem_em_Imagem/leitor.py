@@ -7,6 +7,7 @@ root.attributes('-topmost', True) #deixa a janela como importante, só pode mexe
 open_file = filedialog.askopenfilename(filetypes=(("PNG Files","*.png"),("JPG Files","*.jpg"),("All files","*.*"))) #janela de pesquisa de arquivo + caminho
 
 contador = 0
+n_cores = 0
 
 letras = { #o 1° byte indica se é número ou letra, o segundo indica se é simbolo ou não
     "10000001": "a", "10000010": "b","10000011": "c","10000100": "d","10000101": "e","10000110": "f","10000111": "g","10001000": "h","10001001": "i",
@@ -25,47 +26,65 @@ mensagemSTR = [] #STRING DE CADA NUMERO DA MENSAGEM
 #função pra deixar tudo padrão, da pra editar tudo aqui
 def mudaPixel(x, y):
     tuplo = (image.getpixel( (x, y) ))
-    for i in range(4):
+    n_cores = len(tuplo)
+    for i in range(n_cores):
         byte = "{0:08b}".format(tuplo[i])
         '''print(tuplo[i], end = ' decimal | ')
         print('byte',byte,'| posicão na cor: ',i,'| cor:',tuplo) #'''
         alocacao.append(byte)
 
 def ler(array_bytes):
-    print('recuperado: ', end='') 
+    print('Mensagem: ', end='') 
     oito = 0
+    stringmensageira = ''
     cod = ''
     for i in range(len(array_bytes)):
         if(oito==8):
             #print('codigo',cod)
             if(cod[:1] == '1'):
                 try:
+                    stringmensageira += (str(letras[cod]))
                     print(letras[cod], end = '')
                 except KeyError:
+                    stringmensageira += '>'
                     print('?', end = '')
             else:
-                print(int(cod, 2), end = '')
+                if(cod == '11111111'):
+                    print('')
+                else:
+                    stringmensageira += (str(int(cod, 2)))
+                    print(int(cod, 2), end = '')
             cod = ''
             oito = 0
         cod += array_bytes[i][-1:]
         oito += 1
+    return stringmensageira
 
 image = Image.open(open_file) 
 width, height = image.size
 
-print('w:',width)
-print('h:',height)
 
 if(width>height):
-    print('Height') #dependendo da imagem ela crasha o python :/
     for x in range(height): #*da dimensão
         for y in range(width):
             mudaPixel(y, x)
 else:
-    print('Width')
     for x in range(width):
         for y in range(height):
             mudaPixel(x, y)
 
+msg = ler(alocacao)
+print()
+output = int(input('Deseja salvar a mensagem em um documento de texto? \n 1 - sim \n 2 - não \nDigite sua escolha: '))
 
-ler(alocacao)
+if(output != 2):
+    try: #testa a linha de baixo
+        mensagem = open('mensagem.txt', 'w') #no caso essa linha tenta abrir o arquivo mensagem.txt
+        mensagem.write(msg)
+    except FileNotFoundError: #ele roda isso se der esse erro especifico
+        open('mensagem.txt','x') #o modo x dentro do open cria um arquivo
+        mensagem = open('mensagem.txt', 'w')
+        mensagem.write(msg)
+
+input('pressione enter para fechar o programa')
+exit()
