@@ -9,16 +9,6 @@ open_file = filedialog.askopenfilename(filetypes=(("PNG Files","*.png"),("JPG Fi
 
 contador = 0
 
-letras = { #o 1° byte indica se é número ou letra, o segundo indica se é simbolo ou não
-    "10000001": "a", "10000010": "b","10000011": "c","10000100": "d","10000101": "e","10000110": "f","10000111": "g","10001000": "h","10001001": "i",
-    "10001010": "j", "10001011": "k","10001100": "l","10001101": "m","10001110": "n","10001111": "o","10010000": "p","10010001": "q","10010010": "r",
-    "10010011": "s", "10010100": "t","10010101": "u","10010110": "v","10010111": "w","10011000": "x","10011001": "y","10011010": "z",
-
-    "11000001": " ", "11001111": "'", "11010001": "(", "11011101": ".", "11010011": ")", "11011001": ",", "11011100": "\"", "11011111": "/", "11111111": "?",
-    "11110101": ":", "11110111": ";", "11011011": "-", "11010111": "+", "11111011": "=", "11010101": "*", "11000011": "!",  "11000000": "@", "11000111": "#",
-    "11001001": "$", "11001011": "%", "11001101": "&", "11111100": "|", "11011110": "^", "11111110": "~", "11011010": "´",  "11100000": "`" 
-}   #dicionario pra todos os bytes/numeros/letras (talvez eu tenha feito isso de uma forma ESTUPIDAMENTE burra vendo agora)
-
 #601870.5 bytes(caracteres) para o pato 
 #49056.0  bytes(caracteres) para o lino
 alocacao = []
@@ -27,13 +17,13 @@ mensagemSTR = [] #STRING DE CADA NUMERO DA MENSAGEM
 
 #função pra deixar tudo padrão, da pra editar tudo aqui
 def mudaPixel(x, y):
-    if(x > 0):#width-1):
-        tuplo = (image.getpixel( (x, y) ))
-        for i in range(3):
-            byte = "{0:08b}".format(tuplo[i])
-            '''print(tuplo[i], end = ' decimal | ')
-            print('byte',byte,'| posicão na cor: ',i,'| cor:',tuplo) #'''
-            alocacao.append(byte)
+    #if(x > 0):#width-1):
+    tuplo = (image.getpixel( (x, y) ))
+    for i in range(4):
+        byte = "{0:08b}".format(tuplo[i])
+        '''print(tuplo[i], end = ' decimal | ')
+        print('byte',byte,'| posicão na cor: ',i,'| cor:',tuplo) #'''
+        alocacao.append(byte)
 
 # creating a image object
 image = Image.open(open_file) 
@@ -52,8 +42,6 @@ else:
     for x in range(width):
         for y in range(height):
             mudaPixel(x, y)
-
-#image.save('MODIFICADO.png')
 
 def STRtoBIN(cont):
     string = ''
@@ -129,20 +117,25 @@ def guardar(mensagem):
         contadorMSG += 1
     print('mensagem:',mensagem)
 
-def ler(array_bytes):
-    print('recuperado: ', end='')
-    oito = 0
-    cod = ''
-    for i in range(len(array_bytes)):
-        if(oito==8):
-            if(cod[:1] == '1'):
-                print(letras[cod], end = '')
-            else:
-                print(int(cod, 2), end = '')
-            cod = ''
-            oito = 0
-        cod += array_bytes[i][-1:]
-        oito += 1
+def injecao():
+    contador = 3
+    if(width>height):
+        print('Height')
+        for x in range(height):
+            for y in range(width):
+                injecaoEfetiva(y, x, contador)
+                contador += 4
+    else:
+        print('Width')
+        for x in range(width):
+            for y in range(height):
+                injecaoEfetiva(x, y, contador)
+                contador += 4
+
+def injecaoEfetiva(x, y, c):
+    image.putpixel((x, y),(int(alocacao[c-3], 2), int(alocacao[c-2], 2), int(alocacao[c-1], 2), int(alocacao[c], 2)))
+    #print('coords:',x, y,' cor:',int(alocacao[c-3], 2), int(alocacao[c-2], 2), int(alocacao[c-1], 2), int(alocacao[c], 2),'c=',c)
+    
 
 #print alocacao
 #for i in alocacao:
@@ -152,10 +145,13 @@ input('pressione enter: ') #" '(.),\/?:;-+ =*!@#$%&|^~´`"
 print("a mensagem final aceita os seguintes simbolos: ")
 print("' ' ''' '(' ')' ',' '.' '\\' '/' '?' ':' ';' '-' '+'")
 print("'=' '*' '!' '@' '#' '$' '%' '&' '|' '^' '~' '´' '`'")
-mensagem = input('Mensagem: ')
+mensagem = input('Mensagem: ') + ' '
 
 guardar(mensagem)
-print(alocacao)
-ler(alocacao)
+injecao() #alocacao
+
+#print('ar',array_bytes)
+#print('al',alocacao)
 
 image.show()
+image.save('lino.png')
