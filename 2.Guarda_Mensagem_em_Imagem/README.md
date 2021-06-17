@@ -1,13 +1,23 @@
-Vou só jogar aqui por agora, quero que tenha o histórico de mudanças
+### Descrição:
 
-Resumindo, é um programa em python pro projeto de experiencia criativa que a gnt tem que fazer um site, quero que esse programa seja um complemento, e ele não vai fazer parte do projeto (mais ou menos)
+Programa em Python para fazer uma "esteganografia", ou seja, esconder um texto dentro de uma imagem (de uma maneira não muito óbvia)
 
-A ideia é esconder o link pro download desse codigo no site, e com o programa, pegar a mensagem escondida dentro das imagens so site
+A intenção desse programa é ser um complemento OPCIONAL de um [projeto](https://github.com/danielnowakassis/Experi-ncia-Criativa-PUCPR) de experiência criativa, ele não faz parte diretamente do trabalho
 
-Btw, link do projeto do site [aqui](https://github.com/danielnowakassis/Experi-ncia-Criativa-PUCPR)
+Temos 2 programas nesse repositório, o  `mensageiro.py` e o `leitor.py`
 
-`estagografadorIMG.py ` só pega TODOS os valores binarios e das cores de todos os pixels de uma imagem (e se não me engano traça uma linha em diagonal na imagem), fora isso, não faz nada de especial (esse bagulho ta errado, mas eu mudei tanto que não vale a pena mandar pra ca até ficar pronto)
+Com o `mensageiro.py`, você escolhe uma imagem qualquer, o programa carregará ela e pedirá para o usuário digitar a mensagem que quer. Após alguns segundos (dependendo do tamanho da imagem) uma imagem com o nome `output` será gerada no formato desejado (PNG ou JPG)
 
-`teste_salvarnoUltimoByte.py ` tenta salvar uma informação no ultimo byte de um numero qualquer abaixo de 255, eu vou fazendo esse programa e quando der boa, eu jogo no principal
+Para ter acesso aos conteúdos da mensagem, abra o arquivo `leitor.py`, escolha a imagem com a mensagem e o programa mostrará no terminal os conteúdos da mensagem. Se for do agrado do usuário, ele pode salvar os conteúdos da mensagem em um arquivo de texto usando o próprio programa
 
-o `.BACKUP` é um backup local que eu fiz na hora
+### Requerimentos:
+- Python 3+
+- Tkinter (vem pré-instalado com python)
+  - Como instalar Tkinter na sua máquina:
+    1. Abra o CMD
+    2. Digite `pip install tk`
+- PIL (também vem pré-instalado com python)
+
+Para quem for reproduzir esse projeto, recomendo usar a biblioteca Pillow em vez da PIL, PIL é infelizmente uma biblioteca abandonada
+
+Uma melhoria planejada é diminuir o tamanho das mensagens, em vez da mensagem de verdade e toda a memória disponivel, mostrar somente a mensagem
