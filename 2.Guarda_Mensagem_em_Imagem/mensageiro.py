@@ -1,4 +1,3 @@
-# Importing Image from PIL package
 from PIL import Image
 from tkinter import Tk, filedialog
 
@@ -19,7 +18,15 @@ def mudaPixel(x, y):
     tuplo = (image.getpixel( (x, y) ))
     # o tuplo acima tem ou RGB ou RGBA, RGB tem 3 canais e 
     # RGBA tem 4, isso tem que ser responsivo ou não funciona direito
-    canais = len(tuplo)
+    try:
+        canais = len(tuplo)
+    except TypeError:
+        print('A imagem selecionada não pôde ser processada.')
+        print('Por favor, tente salvar copia-lá e cola-lá no paint,')
+        print('e salve como png ou jpg')
+        print('Caso esse erro se repita, abra um issue no meu github,')
+        input('Pressione enter para fechar o programa')
+        exit()
     for i in range(canais):
         byte = "{0:08b}".format(tuplo[i])
         # basicamente ele converte o valor dentro do tuplo em binario
