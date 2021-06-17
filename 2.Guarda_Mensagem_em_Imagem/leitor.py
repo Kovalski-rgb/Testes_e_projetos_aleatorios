@@ -86,5 +86,6 @@ if(output != 2):
         mensagem = open('mensagem.txt', 'w')
         mensagem.write(msg)
 
+mensagem.close()
 input('pressione enter para fechar o programa')
 exit()
