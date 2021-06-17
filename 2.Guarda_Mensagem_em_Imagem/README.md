@@ -19,5 +19,3 @@ Para ter acesso aos conteúdos da mensagem, abra o arquivo `leitor.py`, escolha 
 - PIL (também vem pré-instalado com python)
 
 Para quem for reproduzir esse projeto, recomendo usar a biblioteca Pillow em vez da PIL, PIL é infelizmente uma biblioteca abandonada
-
-Uma melhoria planejada é diminuir o tamanho das mensagens, em vez da mensagem de verdade e toda a memória disponivel, mostrar somente a mensagem
