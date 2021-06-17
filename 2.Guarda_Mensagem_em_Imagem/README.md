@@ -6,7 +6,7 @@ A ideia é esconder o link pro download desse codigo no site, e com o programa, 
 
 Btw, link do projeto do site [aqui](https://github.com/danielnowakassis/Experi-ncia-Criativa-PUCPR)
 
-`estagografadorIMG.py ` só pega TODOS os valores binarios e das cores de todos os pixels de uma imagem (e se não me engano traça uma linha em diagonal na imagem), fora isso, não faz nada de especial
+`estagografadorIMG.py ` só pega TODOS os valores binarios e das cores de todos os pixels de uma imagem (e se não me engano traça uma linha em diagonal na imagem), fora isso, não faz nada de especial (esse bagulho ta errado, mas eu mudei tanto que não vale a pena mandar pra ca até ficar pronto)
 
 `teste_salvarnoUltimoByte.py ` tenta salvar uma informação no ultimo byte de um numero qualquer abaixo de 255, eu vou fazendo esse programa e quando der boa, eu jogo no principal
 
