@@ -1,5 +1,23 @@
-from PIL import Image
-from tkinter import Tk, filedialog
+# se algum dos modulos necessarios para o funcionamento do programa não esta instalado,
+# um aviso será dado retornado no terminal, e o programa fechará
+exit = False
+try:
+    from PIL import Image
+except ModuleNotFoundError:
+    print('PIL não esta instalado no sistema')
+    print('abra o CMD e digite: pip install pillow')
+    exit = True
+try:
+    from tkinter import Tk, filedialog
+except ModuleNotFoundError:
+    print('tkinter não esta instalado no sistema')
+    print('abra o CMD e digite: pip install tk')
+    exit = True
+
+if(exit):
+    print('Instale os modulos acima executando os comandos e tente novamente')
+    input('pressione enter para encerrar o programa ')
+    exit()
 
 root = Tk() # pointing root to Tk() to use it as Tk() in program.   | IMAGINO que crie um objeto Tk com nome root
 root.withdraw() # Hides small tkinter window.                       | Vou seguir com a linha do que ta escrito ali, não mostra a janelinha padrão
