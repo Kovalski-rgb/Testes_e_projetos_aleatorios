@@ -11,14 +11,15 @@ Com o `mensageiro.py`, você escolhe uma imagem qualquer, o programa carregará 
 Para ter acesso aos conteúdos da mensagem, abra o arquivo `leitor.py`, escolha a imagem com a mensagem e o programa mostrará no terminal os conteúdos da mensagem. Se for do agrado do usuário, ele pode salvar os conteúdos da mensagem em um arquivo de texto usando o próprio programa
 
 ### Requerimentos:
-- Python 3.0+
-- Tkinter (vem pré-instalado com python)
-  - Como instalar Tkinter na sua máquina, caso você não possua:
+- Python v3.9.2+
+- Tkinter v8.6+ (vem pré-instalado com o python)
+  - Como verificar a versão do tkinter instalada:
     1. Abra o CMD
-    2. Digite `pip install tk`
-- PIL (também vem pré-instalado com python)
+    2. Digite `python -m tkinter`
+- Pillow v8.2+
   - Como instalar PIL na sua máquina, caso você não possua:
     1. Abra o CMD
     2. Digite `pip install Pillow`
-
-Para quem for reproduzir esse projeto, recomendo usar a biblioteca Pillow em vez da PIL, PIL é infelizmente uma biblioteca abandonada (a unica opção hoje em dia é baixar a Pillow, PIL não está disponivel para instalação até onde eu sei)
+  - Como verificar a versão do Pillow instalada:
+    1. Abra o CMD
+    2. Digite `pip show Pillow`
