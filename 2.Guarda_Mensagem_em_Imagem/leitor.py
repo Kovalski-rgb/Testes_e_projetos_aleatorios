@@ -20,7 +20,7 @@ if(exit):
 
 root = Tk() # pointing root to Tk() to use it as Tk() in program.   | IMAGINO que crie um objeto Tk com nome root
 root.withdraw() # Hides small tkinter window.                       | Vou seguir com a linha do que ta escrito ali, não mostra a janelinha padrão
-root.attributes('-topmost', True) #deixa a janela como importante (no topo), ela fica em cima das outras janelas (vou tirar isso depois se pa)
+#root.attributes('-topmost', True) #deixa a janela como importante (no topo), ela fica em cima das outras janelas (vou tirar isso depois se pa)
 open_file = filedialog.askopenfilename(filetypes=(("PNG Files","*.png"),("JPG Files","*.jpg"),("All Files","*.*"))) #janela de pesquisa de arquivo + caminho
 
 contador = 0
