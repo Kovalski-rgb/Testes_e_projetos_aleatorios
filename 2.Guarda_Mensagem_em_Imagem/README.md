@@ -2,7 +2,7 @@
 
 Programa em Python para fazer uma "esteganografia", ou seja, esconder um texto dentro de uma imagem (de uma maneira não muito óbvia)
 
-A intenção desse programa é ser um complemento OPCIONAL de um [projeto](https://github.com/danielnowakassis/Experi-ncia-Criativa-PUCPR) de experiência criativa, ele não faz parte diretamente do trabalho, e eu programei isso por opção
+A intenção desse programa é ser um complemento OPCIONAL de um [projeto](https://github.com/danielnowakassis/Experi-ncia-Criativa-PUCPR) de experiência criativa, ele não faz parte diretamente do trabalho
 
 Temos 2 programas nesse repositório, o  `mensageiro.py` e o `leitor.py`
 
@@ -17,5 +17,8 @@ Para ter acesso aos conteúdos da mensagem, abra o arquivo `leitor.py`, escolha 
     1. Abra o CMD
     2. Digite `pip install tk`
 - PIL (também vem pré-instalado com python)
+  - Como instalar PIL na sua máquina, caso você não possua:
+    1. Abra o CMD
+    2. Digite `pip install Pillow`
 
-Para quem for reproduzir esse projeto, recomendo usar a biblioteca Pillow em vez da PIL, PIL é infelizmente uma biblioteca abandonada
+Para quem for reproduzir esse projeto, recomendo usar a biblioteca Pillow em vez da PIL, PIL é infelizmente uma biblioteca abandonada (a unica opção hoje em dia é baixar a Pillow, PIL não está disponivel para instalação até onde eu sei)
