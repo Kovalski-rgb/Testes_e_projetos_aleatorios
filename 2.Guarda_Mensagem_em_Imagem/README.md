@@ -17,7 +17,7 @@ Para ter acesso aos conteúdos da mensagem, abra o arquivo `leitor.py`, escolha 
     1. Abra o CMD
     2. Digite `python -m tkinter`
 - Pillow v8.2+
-  - Como instalar PIL na sua máquina, caso você não possua:
+  - Como instalar Pillow na sua máquina, caso você não possua:
     1. Abra o CMD
     2. Digite `pip install Pillow`
   - Como verificar a versão do Pillow instalada:
