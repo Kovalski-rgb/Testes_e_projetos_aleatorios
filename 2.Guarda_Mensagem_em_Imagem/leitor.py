@@ -118,8 +118,8 @@ if(output != 2):
         mensagem = open('mensagem.txt', 'w')
         mensagem.write(msg)
 
+    # fecha o arquivo de texto
+    mensagem.close()
 
-# fecha o arquivo de texto
-mensagem.close()
-input('pressione enter para fechar o programa')
+    input('pressione enter para fechar o programa')
 exit()
