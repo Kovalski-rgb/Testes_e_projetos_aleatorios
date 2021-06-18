@@ -230,6 +230,8 @@ print('bytes(caracteres) disponiveis para mensagem:',(len(alocacao)/8))
 print("a mensagem final aceita os seguintes simbolos: ")
 print("' ' ''' '(' ')' ',' '.' '\\' '/' '?' ':' ';' '-' '+'")
 print("'=' '*' '!' '@' '#' '$' '%' '&' '|' '^' '~' '´' '`'")
+print('caracteres com acento (â, é, õ, etc) não são processados corretamente')
+print('evite colocá-los na mensagem')
 # coloquei um caractere especial (alt + 255) p representar o final da mensagem
 mensagem = input('Mensagem: ') + ' '
 
