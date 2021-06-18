@@ -11,7 +11,7 @@ Com o `mensageiro.py`, você escolhe uma imagem qualquer, o programa carregará 
 Para ter acesso aos conteúdos da mensagem, abra o arquivo `leitor.py`, escolha a imagem com a mensagem e o programa mostrará no terminal os conteúdos da mensagem. Se for do agrado do usuário, ele pode salvar os conteúdos da mensagem em um arquivo de texto usando o próprio programa
 
 ### Requerimentos:
-- Python 3+
+- Python 3.0+
 - Tkinter (vem pré-instalado com python)
   - Como instalar Tkinter na sua máquina, caso você não possua:
     1. Abra o CMD
