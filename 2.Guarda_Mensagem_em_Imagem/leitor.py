@@ -11,7 +11,6 @@ try:
     from tkinter import Tk, filedialog
 except ModuleNotFoundError:
     print('tkinter não esta instalado no sistema')
-    print('abra o CMD e digite: pip install tk')
     exit = True
 
 if(exit):
